@@ -1,8 +1,6 @@
-import com.sun.org.apache.xpath.internal.operations.Bool
-
 data class Post(
-    val id: Int = 0,
-    val authorId: Int = 0,
+    val id: Long = 0,
+    val authorId: Long = 0,
     val author: String = "",
     val authorJob: String? = null,
     val authorAvatar: String? = null,
@@ -13,4 +11,7 @@ data class Post(
     val mentionedMe: Boolean = false,
     val likedByMe: Boolean = false,
     val attachment: Attachment? = null,
+    val likeOwnerIds: List<Long> = emptyList(),
+    val users: Map<Long, UserPreview> = emptyMap(),
+    val mentionIds: List<Long> = emptyList(),
 )
